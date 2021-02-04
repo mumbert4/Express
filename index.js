@@ -23,7 +23,7 @@ app.get('/',(req,res)=>{
     res.send('Hola');//aixo envia un resposta a una peticio
 });
 
-//sense aixo mos sortira error perque sa pagina mos demana una peticio i noltros no li tornam cap resposta  
+//sense aixo mos sortira error perque sa pagina mos demana una peticio i noltros no li tornam cap resposta 
 
 
 app.listen(3000,()=>{
