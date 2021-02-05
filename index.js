@@ -26,6 +26,14 @@ const morgan= require('morgan');
 //     next();
 // }
 
+//Settings
+app.set('AppName','Tutorial de Express');//per donar noms a una variable(on posa app.listen)
+app.set('port',3000);
+
+app.set('view engine','ejs')//motor de plantilla ejs, no fa falta requerir-ho(molt conegut)
+
+//Middlewares
+
 app.use(express.json());
 //perque express pugui entendre el format json que li arribi
 
@@ -38,6 +46,14 @@ app.use(morgan('dev'));
 // });
 
 //sense aixo mos sortira error perque sa pagina mos demana una peticio i noltros no li tornam cap resposta 
+
+
+//Routs
+
+app.get('/',(req,res)=>{
+    const data= [{name:'Joan'},{name: 'gg'},{name:'jojjo'},{name:'Pablo'}];
+    res.render('index.ejs',{people:data});
+});
 
 app.all('/user',(req,res,next)=>{
     console.log('Pas per aqui');
@@ -88,8 +104,9 @@ app.delete('/user/:userID',(req,res)=>{//eliminar dades del ser servidor i retor
 app.use(express.static('public'));
 
 
-app.listen(5000,()=>{
-    console.log('Servidor en port 5000');
+app.listen(app.get('port'),()=>{
+    console.log(app.get('AppName'));
+    console.log('Servidor en port', app.get('port'));
 });
 
 
