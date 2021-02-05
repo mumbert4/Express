@@ -17,10 +17,20 @@ const express = require('express');
 
 const app = express();
 
+const morgan= require('morgan');
+
 //console.log(app);
+
+function logger(req,res,next){
+    console.log(`Ruta rebuda ${req.protocol}://${req.get('host')}${req.originalUrl}`);
+    next();
+}
 
 app.use(express.json());
 //perque express pugui entendre el format json que li arribi
+
+//app.use(logger);
+app.use(morgan('dev'));
 
 
 app.get('/',(req,res)=>{//get es per retornar coses
