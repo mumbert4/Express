@@ -9,3 +9,5 @@
 3. Provam Postman que es per testejar les rutes, bastant chungo a lo darrer, valdra mes profunditzar i practicar
 
 4. Middlewares-> concepte per manejador de peticions, per arribar abans de qualsevol ruta, fer una funcio o algo, molt parescut a app.all, pero middleware funciona per qualsevol ruta, el .all per una ruta en especific 
+
+5. Hem utilitzat el express.static que per lo que he entes es basicament per enllaçar altres archius(HTML, CSS, JS) i eso, ja veurem com se pot utilitzar
