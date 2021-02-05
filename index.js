@@ -21,10 +21,10 @@ const morgan= require('morgan');
 
 //console.log(app);
 
-function logger(req,res,next){
-    console.log(`Ruta rebuda ${req.protocol}://${req.get('host')}${req.originalUrl}`);
-    next();
-}
+// function logger(req,res,next){
+//     console.log(`Ruta rebuda ${req.protocol}://${req.get('host')}${req.originalUrl}`);
+//     next();
+// }
 
 app.use(express.json());
 //perque express pugui entendre el format json que li arribi
@@ -33,9 +33,9 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 
-app.get('/',(req,res)=>{//get es per retornar coses
-    res.send('Hola');//aixo envia un resposta a una peticio
-});
+// app.get('/',(req,res)=>{//get es per retornar coses
+//     res.send('Hola');//aixo envia un resposta a una peticio
+// });
 
 //sense aixo mos sortira error perque sa pagina mos demana una peticio i noltros no li tornam cap resposta 
 
@@ -83,6 +83,9 @@ app.delete('/test',(req,res)=>{//eliminar dades del ser servidor i retornar algo
 app.delete('/user/:userID',(req,res)=>{//eliminar dades del ser servidor i retornar algo
     res.send(`User ${req.params.userID} deleted`);
 })
+
+
+app.use(express.static('public'));
 
 
 app.listen(5000,()=>{
