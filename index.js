@@ -26,17 +26,18 @@ app.get('/',(req,res)=>{
 //sense aixo mos sortira error perque sa pagina mos demana una peticio i noltros no li tornam cap resposta 
 
 
-app.get('/about',(req,res)=>{
+app.post('/about',(req,res)=>{
     res.send('Som en Miquel Umbert')
 })
 
-app.get('/contact',(req,res)=>{
+app.put('/contact',(req,res)=>{
     res.send('From contact')
 });
 
-app.get('/test',(req,res)=>{
+app.delete('/test',(req,res)=>{
     res.send('Test fet');
 })
+
 
 
 app.listen(5000,()=>{
